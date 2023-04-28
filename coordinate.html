@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Montserrat&family=Roboto&family=Schibsted+Grotesk&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="coordinate.css">
+  <title>Coordinate Converter</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid ms-auto">
+        <!-- <div class="container-fluid"> -->
+            <a class="navbar-brand" href="#">
+              <img src="images/iiitvicd.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="height: 45px; width: 40px; margin-left: 2rem;">
+            </a>
+            <a class="virtual-text" href="#">Virtual Lab IIITV-ICD</a> 
+          <!-- </div> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav" style="padding-right: 2rem;">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link"  href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+  
+  <h1 id="maintext">Coordinate Converter</h1>
+<div class="change-button">
+  <button class="custom-btn btn-2">
+    <a class="active nav-button" id="sphericalLink">Spherical</a>
+  </button>
+  <button class="custom-btn btn-2">
+    <a class="nav-button" id="orthogonalLink">Orthogonal</a>
+  </button>
+  <button class="custom-btn btn-2">
+    <a class="nav-button" id="cartesianLink">Cartesian</a>
+  </button>
+</div>
+
+ 
+
+  <form>
+    <!-- Spherical coordinates -->
+    <div id="sphericalForm">
+      <h3 id="maintext" class="textmain">Spherical Coordinates</h3>
+      <label for="r">r :  <input type="number" id="r" name="r" required> </label>
+      <!-- <input type="number" id="r" name="r" required> -->
+      <label for="phi">φ :  <input type="number" id="phi" name="phi" required></label>
+      
+      <label for="theta">θ :  <input type="number" id="theta" name="theta" required></label>
+      
+    </div>
+
+    <div id="orthogonalForm" style="display: none">
+      <h3 id="maintext" class="textmain">Orthogonal Coordinates</h3>
+      <label for="rho">ρ :  <input type="number" id="rho" name="rho" required></label>
+      
+      <label for="phi_prime">φ :  <input type="number" id="phi_prime" name="phi_prime" required></label>
+      
+      <label for="theta_prime">θ :  <input type="number" id="theta_prime" name="theta_prime" required></label>
+      
+    </div>
+
+    <div id="cartesianForm" style="display: none">
+      <h3 id="maintext" class="textmain">Cartesian Coordinates</h3>
+      <label for="x">x :  <input type="number" id="x" name="x" required></label>
+      
+      <label for="y">y :  <input type="number" id="y" name="y" required></label>
+  
+      <label for="z">z :  <input type="number" id="z" name="z" required></label>
+    </div>
+
+    <button type="submit">Convert</button>
+  </form>
+
+  <div id="output"></div>
+
+<script>
+  (() => {
+    const sphericalLink = document.getElementById("sphericalLink");
+    const orthogonalLink = document.getElementById("orthogonalLink");
+    const cartesianLink = document.getElementById("cartesianLink");
+    const form = document.querySelector("form");
+    const output = document.getElementById("output");
+
+    function showSphericalForm() {
+      sphericalLink.classList.add("active");
+      orthogonalLink.classList.remove("active");
+      cartesianLink.classList.remove("active");
+      document.getElementById("sphericalForm").style.display = "block";
+      document.getElementById("orthogonalForm").style.display = "none";
+      document.getElementById("cartesianForm").style.display = "none";
+    }
+
+    function showOrthogonalForm() {
+      sphericalLink.classList.remove("active");
+      orthogonalLink.classList.add("active");
+      cartesianLink.classList.remove("active");
+      document.getElementById("sphericalForm").style.display = "none";
+      document.getElementById("orthogonalForm").style.display = "block";
+      document.getElementById("cartesianForm").style.display = "none";
+    }
+
+    function showCartesianForm() {
+      sphericalLink.classList.remove("active");
+      orthogonalLink.classList.remove("active");
+      cartesianLink.classList.add("active");
+      document.getElementById("sphericalForm").style.display = "none";
+      document.getElementById("orthogonalForm").style.display = "none";
+  document.getElementById("cartesianForm").style.display = "block";
+}
+
+function showOutput(text) {
+  output.innerHTML = text;
+}
+
+showSphericalForm(); // Show spherical form by default
+
+sphericalLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  showSphericalForm();
+});
+
+orthogonalLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  showOrthogonalForm();
+});
+
+cartesianLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  showCartesianForm();
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const r = parseFloat(document.getElementById("r").value);
+  const phi = parseFloat(document.getElementById("phi").value);
+  const theta = parseFloat(document.getElementById("theta").value);
+  const rho = parseFloat(document.getElementById("rho").value);
+  const phiPrime = parseFloat(document.getElementById("phi_prime").value);
+  const thetaPrime = parseFloat(document.getElementById("theta_prime").value);
+  const x = parseFloat(document.getElementById("x").value);
+  const y = parseFloat(document.getElementById("y").value);
+  const z = parseFloat(document.getElementById("z").value);
+
+  if (sphericalLink.classList.contains("active")) {
+    // Convert from spherical
+    const [x_out, y_out, z_out] = sphericalLink.classList.contains("active") ? sphericalToCartesian(r, phi, theta) : orthogonalToCartesian(rho, phiPrime, thetaPrime);
+    showOutput(`x: ${x_out.toFixed(2)}, y: ${y_out.toFixed(2)}, z: ${z_out.toFixed(2)}`);
+  } else if (orthogonalLink.classList.contains("active")) {
+    // Convert from orthogonal
+    const [r_out, phi_out, theta_out] = orthogonalLink.classList.contains("active") ? orthogonalToSpherical(rho, phiPrime, thetaPrime) : cartesianToSpherical(x, y, z);
+    showOutput(`r: ${r_out.toFixed(2)}, phi: ${phi_out.toFixed(2)}, theta: ${theta_out.toFixed(2)}`);
+  } else {
+    // Convert from cartesian
+    const [rho_out, phi_out, theta_out] = cartesianLink.classList.contains("active") ? cartesianToOrthogonal(x, y, z) : sphericalToOrthogonal(...cartesianToSpherical(x, y, z));
+    showOutput(`rho: ${rho_out.toFixed(2)}, phi_prime: ${phi_out.toFixed(2)}, theta_prime: ${theta_out.toFixed(2)}`);
+  }
+});
+})();
+
+  const sphericalLink = document.getElementById('sphericalLink');
+  const orthogonalLink = document.getElementById('orthogonalLink');
+  const cartesianLink = document.getElementById('cartesianLink');
+
+  sphericalLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    // Your code for switching to the Spherical coordinates form
+  });
+
+  orthogonalLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    // Your code for switching to the Orthogonal coordinates form
+  });
+
+  cartesianLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    // Your code for switching to the Cartesian coordinates form
+  });
+</script>
+ 
+
+</body>
+</html>
