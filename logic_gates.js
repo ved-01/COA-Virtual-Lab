@@ -76,7 +76,7 @@ var inputChartContext = document.getElementById("input-chart").getContext("2d");
 var inputChart = new Chart(inputChartContext, {
     type: "line",
     data: {
-        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" , "18", "19"],
+        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         datasets: inputDatasets
     },
     options: {
@@ -93,7 +93,7 @@ var outputChartContext = document.getElementById("output-chart").getContext("2d"
 var outputChart = new Chart(outputChartContext, {
     type: "line",
     data: {
-        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" , "18", "19"],
+        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         datasets: [
             {
                 label: "Output",
@@ -151,3 +151,20 @@ for (var i = 0; i < waveform1.length; i++) {
 }
 return output;
 }
+// reset function to clear all input and output waveforms
+function reset() {
+    // clear input waveforms array
+    inputWaveforms = [];
+    // clear waveform input field
+    document.getElementById("waveform-input").value = "";
+    // reset gate select to not gate
+    var gateSelect = document.getElementById("gate-select");
+    gateSelect.selectedIndex = 0;
+    // clear input chart
+    var inputChartContext = document.getElementById("input-chart").getContext("2d");
+    inputChartContext.clearRect(0, 0, inputChartContext.canvas.width, inputChartContext.canvas.height);
+    // clear output chart
+    var outputChartContext = document.getElementById("output-chart").getContext("2d");
+    outputChartContext.clearRect(0, 0, outputChartContext.canvas.width, outputChartContext.canvas.height);
+  }
+  

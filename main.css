@@ -1,0 +1,242 @@
+#input-chart, #output-chart {
+    width: 100%;
+    height: 300px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    /* For laptop/desktop view, display charts side-by-side */
+    #input-chart, #output-chart {
+      width: 60%;
+      height: 400px;
+      display: inline-block;
+      /* margin-left: 5rem;
+      margin-right: 5rem; */
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    /* For mobile view, display charts stacked vertically */
+    #input-chart, #output-chart {
+      width: 60%;
+      height: 300px;
+      display: block;
+      /* margin-left: 5rem;
+      margin-right: 5rem; */
+    }
+  }
+  
+  /* Additional CSS for styling */
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+    /* margin-left: 4rem;
+    margin-right: 4rem; */
+    background-color: white;
+  }
+  
+  html {
+    height:100%;
+    /* background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%); */
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  canvas {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+
+  /* Flex container for the input and select elements */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Style for the input element */
+  #waveform-input {
+    padding: 5px;
+    font-size: 16px;
+    width: 250px;
+    margin-right: 20px;
+  }
+  
+  /* Style for the select element */
+  #gates-select {
+    padding: 5px;
+    font-size: 16px;
+    width: 250px;
+    /* width: 250px;
+    margin-right: 20px; */
+  }
+  
+
+  .mainbox{
+        margin: 3rem;
+  }
+
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+
+nav {
+  /* max-width: 960px; */
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  /* padding: 0px 0; */
+  /* padding-right: 2rem; */
+  height:150%;
+  background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
+  /* padding-right: 2rem; */
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+  /* padding-left: 2rem; */
+}
+
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: rgba(254, 254, 255, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+}
+.gates{
+    width: 250px;
+    font-size: 16px;
+    padding-top: 2rem;
+}
+
+.container-convert{
+    /* padding-left: 4rem;
+    padding-right: 4rem; */
+    margin-left: 4rem;
+    margin-right: 4rem;
+    /* margin-bottom: 4rem; */
+    padding-bottom: 4rem;
+    /* padding-left: 3rem;
+    padding-right: 3rem; */
+}
+
+.output{
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.nav-link{
+    color: white;
+}
+
+.virtual-text{
+    color: white;
+    text-decoration: none;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.btn-9 {
+    border: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .btn-9:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     background-color: #1fd1f9;
+  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+    transition: all 0.3s ease;
+  }
+  .btn-9:hover {
+    background: transparent;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    color: #fff;
+  }
+  .btn-9:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  }
+
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }

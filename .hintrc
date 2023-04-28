@@ -3,6 +3,14 @@
     "development"
   ],
   "hints": {
-    "axe/language": "off"
+    "axe/language": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "mask-image"
+        ]
+      }
+    ]
   }
 }
