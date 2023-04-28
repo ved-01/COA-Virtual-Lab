@@ -61,7 +61,7 @@ function updateCharts() {
                 data: waveform1,
                 borderColor: "rgba(0, 0, 255, 1)",
                 fill: false
-                ,
+                
 },
 {
 label: label2,

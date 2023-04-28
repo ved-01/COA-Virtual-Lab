@@ -53,11 +53,9 @@
         </div>
       </nav>
 
+      <h3 id="maintext">Outputing Waveform through NOT, NOR, XOR Gate</h3>
     <!-- <div class="flex-container mainbox"> -->
         <div class="container-convert">
-
-        
-
         <div class="gates">
             <label for="gate-select" style="font-size: 20px;">Select gate:</label>
             <select id="gate-select">
@@ -69,8 +67,8 @@
         </div>
         <br>
         <div>
-            <label for="waveform-input">Enter waveform:</label>
-            <input type="text" id="waveform-input">
+            <label for="waveform-input" >Enter waveform:</label>
+            <input type="text" id="waveform-input" placeholder="Eg: 1, 0, 1, 1, 0" >
             <button class="custom-btn btn-9" onclick="addWaveform()">Add Waveform</button>
             <button class="custom-btn btn-9" onclick="updateCharts()">Calculate Output</button>
             <button class="custom-btn btn-9" onclick="reset()">Reset</button>
