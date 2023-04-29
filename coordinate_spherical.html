@@ -29,10 +29,13 @@
             <a class="nav-link"  href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="coordinate.html">Coordinate Converter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="main.html">Output Waveform</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="main.html">Continuity Equation</a>
           </li>
         </ul>
        
@@ -50,56 +53,51 @@
 
   </div>
   <form>
-    <h3 id="maintext" class="textmain">Cartesian Coordinates</h3>
+    <h3 id="maintext" class="textmain">Spherical Coordinates</h3>
     <div  class="row rowinput">
     <div class="col-md-4">
-      <label class="input-coord" for="x">x-coordinate:</label>
-      <input  type="number" id="x" name="x" required>
+    <label for="r">r - coordinate:</label>
+    <input type="number" id="r" name="r" required>
+</div>
+<div class="col-md-4">
+    <label for="phi">φ - coordinate:</label>
+    <input type="number" id="phi" name="phi" required>
+</div>
+<div class="col-md-4">
+    <label for="theta">θ - coordinate:</label>
+    <input type="number" id="theta" name="theta" required>
+</div>
     </div>
-    <div class="col-md-4">
-      <label class="input-coord" for="y">y-coordinate:</label>
-    <input  type="number" id="y" name="y" required>
-    </div>
-    
-    <div class="col-md-4">
-      
-      <label class="input-coord" for="z">z-coordinate:</label>
-      <input  type="number" id="z" name="z" required>
-    </div>
-    
-    
-  </div>
-  <div class="result">
-    <button class="custom-btn btn-9" type="submit">Convert</button>
-  </div>
-
+    <div class="result">
+        <button class="custom-btn btn-9" type="submit">Convert</button>
+      </div>
   </form>
   <div class="outputval" id="output"></div>
   <script>
-    function cartesianToOrthogonal(x, y, z) {
-      const rho = Math.sqrt(x * x + y * y + z * z);
-      const phi = Math.atan2(z, Math.sqrt(x * x + y * y));
-      const theta = Math.atan2(y, x);
-      return { rho, phi, theta };
+    function sphericalToCartesian(r, phi, theta) {
+      const x = r * Math.sin(phi) * Math.cos(theta);
+      const y = r * Math.sin(phi) * Math.sin(theta);
+      const z = r * Math.cos(phi);
+      return { x, y, z };
     }
 
-    function cartesianToSpherical(x, y, z) {
-      const rho = Math.sqrt(x * x + y * y + z * z);
-      const phi = Math.atan2(Math.sqrt(x * x + y * y), z);
-      const theta = Math.atan2(y, x);
-      return { rho, phi, theta };
+    function sphericalToOrthogonal(r, phi, theta) {
+      const rho = r * Math.sin(phi);
+      const phi_prime = Math.acos(Math.cos(phi));
+      const theta_prime = theta;
+      return { rho, phi: phi_prime, theta: theta_prime };
     }
 
     function convert(event) {
       event.preventDefault();
-      const x = parseFloat(document.getElementById("x").value);
-      const y = parseFloat(document.getElementById("y").value);
-      const z = parseFloat(document.getElementById("z").value);
-      const orthogonal = cartesianToOrthogonal(x, y, z);
-      const spherical = cartesianToSpherical(x, y, z);
+      const r = parseFloat(document.getElementById("r").value);
+      const phi = parseFloat(document.getElementById("phi").value);
+      const theta = parseFloat(document.getElementById("theta").value);
+      const cartesian = sphericalToCartesian(r, phi, theta);
+      const orthogonal = sphericalToOrthogonal(r, phi, theta);
       const output = document.getElementById("output");
-      output.innerHTML = `<p><strong>Orthogonal coordinates:</strong> ρ: ${orthogonal.rho.toFixed(2)}, φ: ${orthogonal.phi.toFixed(2)}, θ: ${orthogonal.theta.toFixed(2)}</p>
-                            <p><strong>Spherical coordinates:</strong> ρ: ${spherical.rho.toFixed(2)}, φ: ${spherical.phi.toFixed(2)}, θ: ${spherical.theta.toFixed(2)}</p>`;
+      output.innerHTML = `<p><strong>Cartesian coordinates:</strong> x: ${cartesian.x.toFixed(2)}, y: ${cartesian.y.toFixed(2)}, z: ${cartesian.z.toFixed(2)}</p>
+                            <p><strong>Orthogonal coordinates:</strong> ρ: ${orthogonal.rho.toFixed(2)}, φ: ${orthogonal.phi.toFixed(2)}, θ: ${orthogonal.theta.toFixed(2)}</p>`;
     }
 
     const form = document.querySelector("form");

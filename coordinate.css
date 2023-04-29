@@ -143,8 +143,9 @@ nav ul li {
 
 nav ul li a {
   padding: 18px;
-  font-family: "Open Sans";
-  text-transform:uppercase;
+  /* font-family: "Open Sans"; */
+  font-family: 'Chakra Petch', sans-serif;
+  /* text-transform:uppercase; */
   color: rgba(254, 254, 255, 0.5);
   font-size: 18px;
   text-decoration: none;
