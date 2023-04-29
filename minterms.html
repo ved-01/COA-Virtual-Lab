@@ -1,22 +1,71 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title> K_MAP</title>
-        <link rel="stylesheet" href="kstyle.css">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Terms</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Montserrat&family=Roboto&family=Schibsted+Grotesk&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="coordinate.css">
+</head>
+
 <body>
-    <div class="flexbox">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid ms-auto">
+                <a class="navbar-brand" href="index.html">
+                  <img src="images/iiitvicd.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="height: 40px; width: 40px; margin-left: 2rem;">
+                </a>
+                <a class="virtual-text" href="index.html">Virtual Lab IIITV-ICD</a> 
+ 
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav" style="padding-right: 2rem;">
+            <ul class="navbar-nav ms-auto">
+              <!-- <li class="nav-item">
+                <a class="nav-link"  href="index.html">Home</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="coordinate.html">Coordinate Converter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="main.html">Output Waveform</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="continuity.html">Continuity Equation</a>
+              </li>
+              
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+
+      <div class="change-button">
+        <button class="custom-btn btn-2"><a id="refrencetext" href="/minterms.html">Min terms</a></button>
+       <button class="custom-btn btn-2"><a id="refrencetext" href="/maxterms.html">Max terms</a></button>
+       <button class="custom-btn btn-2"><a id="refrencetext" href="/kmap.html">K Map</a></button>
+       
+      </div>
+      <!-- <h1 id="maintext">Verification of Continuity Equation</h1> -->
+      <h1 id="maintext">Minterm Expression Solver</h1>
+      <div class="flexbox">
         <div class="flexitem expression" id="expressionDiv">
             <div class="flexitem">
-                <h1>Minterm Expression Solver</h1>
+                
             </div>
                 <form  onsubmit="return false;">
                     <input id="inputValue" type="text" name="text" class="input" placeholder="1,2,3,4">
                     <input id="inputLetters" type="text" name="text" class="input" placeholder="A,B,C,D">
-                    <button type="submit" class="button" value="submit" onclick="validate(false)">Evaluate Minterm</button>
+                    <button type="submit" class="custom-btn btn-9" value="submit" onclick="validate(false)">Evaluate Minterm</button>
                 </form>
-
-
 
         </div>
         <div class="table" id="tablediv"></div>

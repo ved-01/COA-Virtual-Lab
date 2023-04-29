@@ -356,4 +356,121 @@ margin-left: 0px;
   }
  
 
- 
+  div.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: auto;
+    height: 100%;
+    /* background-image: url(https://cutewallpaper.org/21/css-background-image-size-to-fit/jQuery-Plugin-To-Resize-Background-Image-To-Fit-Screen-.jpg); */
+  
+  
+  
+  }
+  div.flexitem {
+    /* center children in this div */
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* margin-top: 1rem; */
+  }
+  div.flexitemrow {
+    /* center children in this div */
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* margin-top: 1rem; */
+  }
+
+  div.paragraph{
+    text-align: center;
+  }
+  
+  div.expression {
+    align-items: top;
+    flex: 1;
+  }
+  
+  div.table {
+    /* height: 100%; */
+    min-height: 10%;
+    max-height: 100%;
+    overflow: auto;
+    flex: 1;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  
+  }
+  
+  div.spacer {
+    flex: 1;
+  }
+  
+  table.truth_table {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    overflow: auto;
+    height: 100%;
+    background-color: transparent;
+  }
+  
+  table.truth_table th {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #1F2739;
+  
+  
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-align: inherit;
+    padding: .75rem;
+    border-top: 1px solid #000000;
+    vertical-align: bottom;
+    /* border-bottom: 2px solid #dee2e6; */
+  
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+  
+  table.truth_table td {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #170101;
+    text-align: left;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    padding: .75rem;
+    vertical-align: top;
+    /* border-top: 1px solid #dee2e6; */
+  }
+  
+  table.truth_table tbody tr:nth-of-type(odd) {
+    background-color: #ffffff;
+  }
+  
+  table.truth_table tbody tr:nth-of-type(even) {
+    background-color: #ffffff;
+  }
+  
+  table.truth_table tbody tr{
+    height: 10;
+  }
