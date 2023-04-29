@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title> K_MAP</title>
+        <link rel="stylesheet" href="kstyle.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+    </head>
+<body>
+    <div class="flexbox">
+        <div class="flexitem expression" id="expressionDiv">
+            <div class="flexitem">
+                <h1>Minterm Expression Solver</h1>
+            </div>
+                <form  onsubmit="return false;">
+                    <input id="inputValue" type="text" name="text" class="input" placeholder="1,2,3,4">
+                    <input id="inputLetters" type="text" name="text" class="input" placeholder="A,B,C,D">
+                    <button type="submit" class="button" value="submit" onclick="validate(false)">Evaluate Minterm</button>
+                </form>
+
+
+
+        </div>
+        <div class="table" id="tablediv"></div>
+    </div>
+
+</body>
+<script src="minterms.js"></script>
+</html>

@@ -327,3 +327,33 @@ margin-left: 0px;
     text-align: center;
     padding-top: 1rem;
   }
+
+  .verifyequation{
+    text-align: center;
+    padding-top: 1rem;
+    /* padding-left: 14rem; */
+  }
+
+  #fluid-dynamics-form{
+    padding-top: 2rem;
+    text-align: left;
+    padding-left: 37rem;
+  }
+  #electromagnetic-form{
+    padding-top: 2rem;
+    text-align: left;
+    padding-left: 37rem;
+  }
+  #energy-form{
+    padding-top: 2rem;
+    text-align: left;
+    padding-left: 37rem;
+  }
+  #computer-vision-form{
+    padding-top: 2rem;
+    text-align: left;
+    padding-left: 37rem;
+  }
+ 
+
+ 

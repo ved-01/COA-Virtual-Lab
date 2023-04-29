@@ -1,0 +1,26 @@
+<html>
+    <head>
+    <title>K_MAP</title>
+    <link rel="stylesheet" href="kstyle.css">
+</head>
+<body>
+    <div class="flexbox">
+        <div class="flexitem expression" id="expressionDiv">
+            <div class="flexitem">
+                <h1> Boolean Expression Solver</h1>
+            </div>
+            <div class="flexitem" >
+                <form  onsubmit="return false;">
+                    <input id="expression" type="text" name="text" class="input" placeholder="AB * CD = EFGH">
+                    <button type="submit" class="button" value="submit" onclick="validate()">Evaluate</button>
+                </form>
+            </div>
+            
+
+        </div>
+        <div class="table" id="tablediv"></div>
+    </div>
+
+</body>
+<script src="map.js"></script>
+</html>

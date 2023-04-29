@@ -55,11 +55,11 @@
     <button class="custom-btn btn-2"><a id="refrencetext" href="/vision.html">Computer Vision</a></button>
     <button class="custom-btn btn-2"><a id="refrencetext" href="/energy.html">Energy Conservation</a></button>
 
-   <section>
+   <section class="verifyequation">
     <h2 class="textmain" id="maintext">Fluid Dynamics</h2>
     <!-- <p>Enter the values for the continuity equation in the fluid dynamics domain:</p> -->
     <form id="fluid-dynamics-form">
-        <label for="rho_f">Fluid Density (ρ<sub>f</sub>):</label>
+        <label class="label-las" for="rho_f">Fluid Density (ρ<sub>f</sub>):</label>
         <input type="number" id="rho_f" name="rho_f" required>
         <br>
         <label for="v">Velocity (v):</label>
@@ -67,7 +67,7 @@
         <br>
         <label for="A">Cross-sectional Area (A):</label>
         <input type="number" id="A" name="A" required>
-        <br>
+        <br> <br>
         <button class="custom-btn btn-9" type="button" onclick="verifyFluidDynamics()">Submit</button>
     </form>
     <p id="fluid-dynamics-result"></p>
