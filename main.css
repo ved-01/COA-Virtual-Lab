@@ -33,7 +33,7 @@
     font-weight: bold;
     /* margin-left: 4rem;
     margin-right: 4rem; */
-    background-color: white;
+    background-color: #111;
   }
   
   html {
@@ -248,6 +248,7 @@ nav ul li a:hover {
     text-align: center;
     padding-top: 2rem;
     font-family: 'Chakra Petch', sans-serif;  
+    color: white;
     /* text-decoration: ; */
     /* font-weight: bold; */
 }
@@ -257,3 +258,11 @@ nav ul li a:hover {
 
 }
 
+
+#mainhead{
+  color: #fff;
+  text-align: center;
+  /* line-height: 2rem; */
+  margin-top: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
